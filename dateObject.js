@@ -25,7 +25,7 @@
     const hf = hourFormat;
 
     // check if hour is  AM/PM. only use with 12hr format
-    const amPm = hr => hr<12 ? 'am' :  'pm';
+    const checkAmPm = hr => hr<12 ? 'AM' : 'PM';
 
     // format days to word
 
@@ -36,11 +36,17 @@
     const monFull = ['January','February','March','April','May','June','July','August','September','October','November','December'];
       
     let sec = timeNow.getSeconds();
+    let Sec = `${aZ(sec)}`;
     let min = timeNow.getMinutes();
+    let Min = `${aZ(min)}`;
     let hour = timeNow.getHours();
-    let hrAmPm = `${amPm(hour)}`
-    let hrMin = `${hf(hour)}:${aZ(min)}`;    
-    let hrMinSec = `${hf(hour)}:${aZ(min)}:${aZ(sec)}`;
+    let Hour = `${aZ(hour)}`;
+    let HOUR = `${hf(hour)}`;
+    let amPm = `${checkAmPm(hour)}`
+    let hrMin = `${aZ(hour)}:${aZ(min)}`;   
+    let HRMin = `${hf(hour)}:${aZ(min)}`;   
+    let hrMinSec = `${aZ(hour)}:${aZ(min)}:${aZ(sec)}`;
+    let HRMinSec = `${hf(hour)}:${aZ(min)}:${aZ(sec)}`;
     let fulltime = timeNow.toLocaleTimeString();        
     let dayIndex = timeNow.getDay();
     let day = `${daysOfWeek[dayIndex]}`;
