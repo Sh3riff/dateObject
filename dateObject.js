@@ -53,7 +53,7 @@
     let fulldate = timeNow.toDateString();
     
     
-    targetElement.innerHTML = `${predefinedMethod}`;
+    //targetElement.innerHTML = `${predefinedMethod}`;
 
     setTimeout(showTime, 1000);
 }());
